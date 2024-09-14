@@ -1,0 +1,247 @@
+
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: url('https://wallpapers.com/images/hd/grid-cool-pattern-f1xzeorczdg0ipbx.jpg') center/cover no-repeat;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Навигационное меню */
+nav {
+    background: rgba(15, 15, 15, 0.9);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 10px 0;
+    transition: background 0.3s ease;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: #e0e0e0;
+    color: #1a1a1a;
+    border-color: #e0e0e0;
+}
+
+/* Заголовок */
+header {
+    background: linear-gradient(145deg, rgba(44, 44, 44, 0.8), rgba(26, 26, 26, 0.8)), 
+                url('https://observer.com/wp-content/uploads/sites/2/2018/10/mark-cruz-230099-unsplash-e1540329399641.jpg?quality=80&strip') 
+                center/cover no-repeat; 
+    color: #fff;
+    padding: 100px 20px 50px;
+    text-align: center;
+    margin-top: 50px;
+    border-bottom: 1px solid #333;
+    position: relative;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    z-index: 10;
+    position: relative;
+}
+
+/* Секции */
+section {
+    padding: 50px 20px;
+    margin: 20px 0;
+}
+
+#portfolio, #about {
+    background: rgba(15, 15, 15, 0.8);
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 30px;
+    animation: fadeInUp 1s ease both;
+}
+
+/* Обновленные стили для блока "Обо мне" */
+#about {
+    background: linear-gradient(145deg, rgba(44, 44, 44, 0.8), rgba(26, 26, 26, 0.8)), 
+                url('https://i0.wp.com/clagibsonville.com/wp-content/uploads/2014/11/main-background1.jpg?resize=1920%2C1080&ssl=1') 
+                center/cover no-repeat;
+    color: #fff;
+    padding: 60px 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    z-index: 10;
+    position: relative;
+    color: #f8f8f8;
+}
+
+.about-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.about-card {
+    background: rgba(34, 34, 34, 0.85);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.about-icon {
+    width: 60px;
+    margin-bottom: 15px;
+}
+
+.about-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #e0e0e0;
+}
+
+.about-card p {
+    font-size: 1rem;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+/* Стили для кнопки "Наверх" */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #e0e0e0;
+    color: #1a1a1a;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease, transform 0.3s ease;
+    display: none;
+}
+
+#back-to-top:hover {
+    background: #f1f1f1;
+    transform: translateY(-3px);
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Адаптивные стили */
+@media (max-width: 1024px) {
+    header {
+        padding: 80px 20px 40px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .btn {
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .video-carousel {
+        grid-template-columns: 1fr;
+    }
+
+    iframe {
+        height: 180px;
+    }
+
+    section {
+        padding: 30px 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 60px 10px 30px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .btn {
+        padding: 6px 12px;
+    }
+
+    iframe {
+        height: 150px;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+}
